@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress
+  namespace: argocd
+  annotations:
+    # Indique à cert-manager d'utiliser notre ClusterIssuer Cloudflare
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    # Redirection automatique HTTP -> HTTPS par Traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: argo.baptiste.zip
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              name: http
+  tls:
+  - hosts:
+    - argo.baptiste.zip
+    secretName: argo-baptiste-zip-tls
