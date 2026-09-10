@@ -1,12 +1,12 @@
 site_name: Homelab k3s GitOps Docs
-site_description: Documentation d'architecture, déploiement et guides pour le cluster k3s
+site_description: Architectural documentation, deployment guides, and manifests for the k3s cluster
 site_author: Baptiste
 repo_url: https://github.com/ZiplEix/homelab-infra
 repo_name: ZiplEix/homelab-infra
 
 theme:
   name: material
-  language: fr
+  language: en
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -14,14 +14,14 @@ theme:
       accent: cyan
       toggle:
         icon: material/brightness-4
-        name: Passer au mode clair
+        name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: teal
       accent: cyan
       toggle:
         icon: material/brightness-7
-        name: Passer au mode sombre
+        name: Switch to dark mode
   features:
     - navigation.tabs
     - navigation.sections
@@ -52,16 +52,15 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - Accueil: index.md
+  - Home: index.md
   - Architecture:
-      - Vue d'ensemble: architecture/overview.md
-      - Réseau & Ingress (Traefik): architecture/networking.md
-      - DNS & Certificats (ExternalDNS, CertManager): architecture/dns-tls.md
-      - GitOps (Argo CD): architecture/gitops.md
-  - Guides:
-      - Gestion des Secrets (SealedSecrets): guides/secrets.md
-      - Déployer un Nouveau Service: guides/new-service.md
-      - Base de données PostgreSQL & PVC: guides/database.md
-  - Templates Manifests:
-      - Microservice Standard: templates/standard-app.md
-      - StatefulSet BDD: templates/database-app.md
+      - Networking & Ingress: architecture/networking.md
+      - DNS & TLS Automation: architecture/dns-tls.md
+      - GitOps & Delivery: architecture/gitops.md
+  - Operational Guides:
+      - Secret Encryption Runbook: guides/secrets.md
+      - Service Onboarding Guide: guides/new-service.md
+      - Stateful Workloads & Backups: guides/database.md
+  - Manifest Reference:
+      - Standard Application Manifest: templates/standard-app.md
+      - StatefulSet Manifest: templates/database-app.md
