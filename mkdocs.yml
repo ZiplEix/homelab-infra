@@ -1,4 +1,5 @@
 site_name: Homelab k3s GitOps Docs
+site_url: https://zipleix.github.io/homelab-infra/
 site_description: Architectural documentation, deployment guides, and manifests for the k3s cluster
 site_author: Baptiste
 repo_url: https://github.com/ZiplEix/homelab-infra
