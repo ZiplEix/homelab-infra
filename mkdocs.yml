@@ -1,0 +1,67 @@
+site_name: Homelab k3s GitOps Docs
+site_description: Documentation d'architecture, déploiement et guides pour le cluster k3s
+site_author: Baptiste
+repo_url: https://github.com/ZiplEix/homelab-infra
+repo_name: ZiplEix/homelab-infra
+
+theme:
+  name: material
+  language: fr
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Accueil: index.md
+  - Architecture:
+      - Vue d'ensemble: architecture/overview.md
+      - Réseau & Ingress (Traefik): architecture/networking.md
+      - DNS & Certificats (ExternalDNS, CertManager): architecture/dns-tls.md
+      - GitOps (Argo CD): architecture/gitops.md
+  - Guides:
+      - Gestion des Secrets (SealedSecrets): guides/secrets.md
+      - Déployer un Nouveau Service: guides/new-service.md
+      - Base de données PostgreSQL & PVC: guides/database.md
+  - Templates Manifests:
+      - Microservice Standard: templates/standard-app.md
+      - StatefulSet BDD: templates/database-app.md
