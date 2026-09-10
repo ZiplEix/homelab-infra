@@ -115,5 +115,5 @@ Pre-configured GitHub repository templates are maintained to streamline new serv
   * [Service Onboarding Guide](guides/new-service.md): End-to-end setup of a new workload from repository to public routing.
   * [Stateful Workloads & Backups](guides/database.md): Local-path storage volumes, dump, restore, and maintenance.
 * **Manifest Reference:**
-  * [Standard Application Manifest](templates/standard-app.md): Baseline YAML template for Deployment, Service, and Ingress.
-  * [StatefulSet Manifest](templates/database-app.md): Baseline YAML template for persistent database deployments.
+  * [Standard Application Manifest](manifests/standard-app.md): Baseline YAML template for Deployment, Service, and Ingress.
+  * [StatefulSet Manifest](manifests/database-app.md): Baseline YAML template for persistent database deployments.

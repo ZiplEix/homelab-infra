@@ -63,5 +63,5 @@ nav:
       - Service Onboarding Guide: guides/new-service.md
       - Stateful Workloads & Backups: guides/database.md
   - Manifest Reference:
-      - Standard Application Manifest: templates/standard-app.md
-      - StatefulSet Manifest: templates/database-app.md
+      - Standard Application Manifest: manifests/standard-app.md
+      - StatefulSet Manifest: manifests/database-app.md
