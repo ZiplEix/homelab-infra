@@ -4,11 +4,10 @@ metadata:
   name: argocd-server-ingress
   namespace: argocd
   annotations:
-    # Indique à cert-manager d'utiliser notre ClusterIssuer Cloudflare
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    # Redirection automatique HTTP -> HTTPS par Traefik
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
+    external-dns.alpha.kubernetes.io/target: 82.67.198.156
 spec:
   ingressClassName: traefik
   rules:

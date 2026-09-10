@@ -25,7 +25,6 @@ spec:
         - --cloudflare-dns-records-per-page=5000
         - --policy=upsert-only
         - --txt-owner-id=k3s-cloudflare-homelab
-        - --target=82.67.198.156
         env:
         - name: CF_API_TOKEN
           valueFrom:
