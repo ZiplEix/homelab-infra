@@ -4,13 +4,19 @@ metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
-    email: leroyerbaptiste@gmail.com
+    email: admin@baptiste.zip
     privateKeySecretRef:
       name: letsencrypt-prod-account-key
+    server: https://acme-v02.api.letsencrypt.org/directory
     solvers:
-    - dns01:
+    - selector:
+        dnsZones:
+        - "baptiste.zip"
+      dns01:
         cloudflare:
           apiTokenSecretRef:
-            name: cloudflare-api-token-secret
             key: api-token
+            name: cloudflare-api-token-secret
+    - http01:
+        ingress:
+          class: traefik
