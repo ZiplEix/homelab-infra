@@ -21,6 +21,7 @@ spec:
         args:
         - --source=ingress
         - --domain-filter=questhub.fr
+        - --domain-filter=crafteur.fr
         - --provider=ovh
         - --policy=upsert-only
         - --txt-owner-id=k3s-ovh-homelab
