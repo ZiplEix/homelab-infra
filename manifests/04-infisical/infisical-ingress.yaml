@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: infisical-traefik-ingress
+  namespace: infisical
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: vault.baptiste.zip
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: infisical-infisical-standalone-infisical
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - vault.baptiste.zip
+      secretName: vault-baptiste-zip-tls
