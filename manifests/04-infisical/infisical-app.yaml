@@ -32,6 +32,7 @@ spec:
                 - vault.baptiste.zip
 
         infisical:
+          replicaCount: 1
           existingSecret: infisical-secrets
           siteUrl: "https://vault.baptiste.zip"
 
