@@ -13,9 +13,12 @@ spec:
       valuesObject:
         ingress-nginx:
           enabled: false
+        nginx-ingress:
+          enabled: false
+
         ingress:
           enabled: true
-          className: traefik
+          ingressClassName: traefik
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
           hosts:
@@ -27,9 +30,11 @@ spec:
             - secretName: vault-baptiste-zip-tls
               hosts:
                 - vault.baptiste.zip
+
         infisical:
           existingSecret: infisical-secrets
           siteUrl: "https://vault.baptiste.zip"
+
         postgresql:
           enabled: true
           primary:
